@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FeedBack Sheet</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    	div {
+            padding: 10px;
+            background-color: #f6f6f6;
+            overflow: hidden;
+        }
+    	input[type=text], textarea, select {
+            font: 17px Calibri;
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type=button]{ 
+            font: 17px Calibri;
+            width: auto;
+            float: right;
+            cursor: pointer;
+            padding: 7px;
+        }
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+    </style>
+</head>
+<body>
+
+<img src="E:\Images\Logo.png" class="center" alt="Tecqnio" width="100" height="50"\>
+
+<h1 align="center">Customer Feedback Form</h1>
+<h2 align="center"> * We would like your feedback to imporve our store *</h2>
+<hr></hr>
+<br/>
+
+    <div>
+        
+        <!--Add few elements to the form-->
+
+        <div>
+            <input type="text" id="txtName" placeholder="Enter your name" />
+        </div>
+        <div>
+            <input type="text" id="Phno" placeholder="Enter Your PhoneNumber" />
+        </div>
+        <div>
+            <input type="text" id="txtEmail" placeholder="Enter your email address" />
+        </div>
+        <div>
+          <h3>1.How satisfied are you with the product..?</h3>
+            <select id="satisfied">
+                <option selected value="">Choose a Rating</option>
+                <option value="Very satisfied">Very satisfied</option>
+                <option value="Satisfied">Satisfied</option>
+                <option value="Neutral">Neutral</option>
+                <option value="Dissatisfied">Dissatisfied</option>
+                <option value="very dissatisfied">very dissatisfied</option>
+            </select>
+        </div>
+
+
+<div>
+          <h3>2.How helpful are the staffs at the store..?</h3>
+            <select id="helpful">
+                <option selected value="">Choose a Rating</option>
+                <option value="Verybad">Verybad</option>
+                <option value="Bad">Bad</option>
+                <option value="Very Good">Very Good</option>
+                <option value="Good">Good</option>
+                <option value="Excellent">Excellent</option>
+            </select>
+        </div>
+
+
+
+<div>
+          <h3>3.How friendly are the staffs at the store...?</h3>
+            <select id="friendly">
+                <option selected value="">Choose a Rating</option>
+                <option value="Verybad">Verybad</option>
+                <option value="Bad">Bad</option>
+                <option value="Very Good">Very Good</option>
+                <option value="Good">Good</option>
+                <option value="Excellent">Excellent</option>
+            </select>
+        </div>
+
+
+
+
+<div>
+          <h3>4.Did our staff answer your all your question at the store...?</h3>
+            <select id="staff">
+                <option selected value="">Choose a Rating</option>
+                <option value="YES">YES</option>
+                <option value="NO">NO</option>
+            </select>
+        </div>
+
+<div>
+          <h3>5.How clean is our store....?</h3>
+            <select id="clean">
+                <option selected value="">Choose a Rating</option>
+                <option value="Verybad">Verybad</option>
+                <option value="Bad">Bad</option>
+                <option value="Very Good">Very Good</option>
+                <option value="Good">Good</option>
+                <option value="Excellent">Excellent</option>
+            </select>
+        </div>
+
+<div>
+          <h3>6.How did you hear about our store..?</h3>
+            <select id="hear">
+                <option selected value="">Choose a Rating</option>
+                <option value="Online">Online</option>
+                <option value="Website">Website</option>
+                <option value="Poster">Poster</option>
+                <option value="Friends">Friends</option>
+                <option value="Others">Others</option>
+            </select>
+        </div>
+
+<div>
+          <h3>7.How likely are you to recommend this store to others....?</h3>
+            <select id="refer">
+                <option selected value="">Choose a Rating</option>
+                <option value="Verybad">Verybad</option>
+                <option value="Bad">Bad</option>
+                <option value="Very Good">Very Good</option>
+                <option value="Good">Good</option>
+                <option value="Excellent">Excellent</option>
+            </select>
+        </div>
+
+
+
+
+
+
+<h3>8.Please tell us how can we make your experience better....?</h3>
+
+        <div>
+            <textarea id="msg" name="msg" placeholder="Write some message ..." style="height:100px"></textarea>
+        </div>
+        <div>
+          <input align="center" type="button" id="bt" value="Submit" onclick="saveFile()" />
+        </div>
+
+    </div>
+</body>
+<script>
+    let saveFile = () => {
+    	
+        // Get the data from each element on the form.
+    	const name = document.getElementById('txtName');
+        const Phonenumner = document.getElementById('Phno');
+        const email = document.getElementById('txtEmail');
+        const sat = document.getElementById('satisfied');
+ 	const help = document.getElementById('helpful');
+ 	const friendly = document.getElementById('friendly');
+ 	const st = document.getElementById('staff');
+ 	const cl = document.getElementById('clean');
+ 	const he= document.getElementById('hear');
+        const ref = document.getElementById('refer');
+        const msg = document.getElementById('msg');
+        
+        // This variable stores all the data.
+        let data = 
+            '\r Name  : ' + name.value + ' \r\n '  + 
+
+            'Phonenumber : ' +Phonenumner.value + ' \r\n ' + 
+
+            'Email  : ' + email.value + ' \r\n ' + 
+
+            'How satisfied are you with the product..?  : ' + sat.value + ' \r\n ' + 
+
+	'How helpful are the staffs at the store..?  : ' + help.value + ' \r\n ' +
+
+	'How friendly are the staffs at the store...?  : ' + friendly.value + ' \r\n ' +
+
+	'Did our staff answer your all your question at the store...?  : ' + st.value + ' \r\n ' +
+
+	'How clean is our store....?  : ' + cl.value + ' \r\n ' +
+
+	'How did you hear about our store..? : ' + he.value + ' \r\n ' + 
+
+        'How likely are you to recommend this store to others....? : ' + ref.value + ' \r\n ' + 
+
+
+        'Customer comment: ' + msg.value;
+
+var customername = name.value;
+var cphonenumber = Phonenumner.value;
+        
+        // Convert the text to BLOB.
+        const textToBLOB = new Blob([data], { type: 'text/plain' });
+
+        const sFileName = ''+customername + cphonenumber+'.txt';	   // The file to save the data.
+
+        let newLink = document.createElement("a");
+           var localfile = newLink.filename
+
+        newLink.download = sFileName;
+
+        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        }
+        else {
+            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+
+        newLink.click(); 
+    }
+</script>
+</html>
